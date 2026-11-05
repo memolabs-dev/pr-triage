@@ -1,0 +1,12 @@
+{
+  "name": "pr-triage",
+  "version": "0.1.0",
+  "description": "Sort outside pull requests into review, send back and compare, with rules a maintainer can check by hand.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "bin": { "pr-triage-report": "src/report.js" },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  }
+}

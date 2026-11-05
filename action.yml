@@ -1,0 +1,22 @@
+name: PR triage
+description: Sort outside pull requests into review, send back and compare, with rules a maintainer can check by hand.
+author: Memo Labs
+branding:
+  icon: filter
+  color: orange
+inputs:
+  github-token:
+    description: Token with pull-requests and issues write access. The default GITHUB_TOKEN is enough.
+    default: ${{ github.token }}
+  config-path:
+    description: JSON rules file, read from the base branch, never from the pull request.
+    default: .github/pr-triage.json
+  dry-run:
+    description: When "true", only write the decision to the job summary.
+    default: "false"
+outputs:
+  pile:
+    description: review, send-back, compare or skip.
+runs:
+  using: node24
+  main: src/action.js
