@@ -24,7 +24,7 @@ jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
-      - uses: guillaume-flambard/pr-triage@v0
+      - uses: memolabs-dev/pr-triage@v0
 ```
 
 `pull_request_target` gives the job a token that can label pull requests from forks. That is safe here because the action only reads the pull request through the API; never add a step that checks out the pull request's head.
